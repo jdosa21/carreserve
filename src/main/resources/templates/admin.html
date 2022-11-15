@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <title>관리자 페이지</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css"/>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet"/>
+  <link href="css/reserve.css" rel="stylesheet"/>
+  <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+        .masthead {
+            height: 2vh;
+        }
+
+        .h1-title {
+            position: relative;
+            bottom: 90px;
+        }
+  </style>
+  <script>
+    function logout_btn() {
+       alert('로그아웃 되었습니다.');
+    }
+  </script>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto py-4 py-lg-0">
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/reserve">예약</a>
+        </li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/check">예약 확인</a></li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/journal">운행 일지</a></li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/admin">관리자</a></li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/logout"
+                                onclick="javascript:logout_btn()">로그아웃</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('assets/img/headerimg.jpeg')">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1 class="h1-title">Corporate Car Reservation</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content-->
+<!-- 예약 리스트-->
+<div class="div-reservelist2">
+  <div class="cell-a">
+    <div class="box">
+      <strong>예약 관리</strong>
+    </div>
+    <table class="table-rlist2">
+      <thead>
+      <tr>
+        <th>운행자 이름</th>
+        <th>예약 차량</th>
+        <th>운행 목적</th>
+        <th>행선지</th>
+        <th>예약 시간</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="reserve : ${rlist}" >
+        <td th:text="${reserve.rname}"></td>
+        <td th:text="${reserve.rcarnum}"></td>
+        <td th:text="${reserve.purpose}"></td>
+        <td th:text="${reserve.dest}"></td>
+        <td th:text="${reserve.rt}"></td>
+      </tr>
+      </tbody>
+    </table>
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </div>
+  <br>
+  <div class="cell-b">
+    <div class="box">
+      <strong>운행일지 관리</strong>
+    </div>
+    <table class="table-jlist">
+      <thead>
+      <tr>
+        <th>작성 시간</th>
+        <th>운행자 이름</th>
+        <th>예약 차량</th>
+        <th>운행 목적</th>
+        <th>행선지</th>
+        <th>운행 시간</th>
+        <th>주행 거리</th>
+        <th>차량 상태</th>
+        <th>특이 사항</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="journal : ${jlist}">
+        <td th:text="${#temporals.format(journal.date, 'yyyy-MM-dd HH:mm')}">
+        <td th:text="${journal.jname}"></td>
+        <td th:text="${journal.jcarnum}"></td>
+        <td th:text="${journal.jpurpose}"></td>
+        <td th:text="${journal.jdest}"></td>
+        <td th:text="${journal.jrt}"></td>
+        <td th:text="${journal.jkm}"></td>
+        <td th:text="${journal.condi}"></td>
+        <td th:text="${journal.uni}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

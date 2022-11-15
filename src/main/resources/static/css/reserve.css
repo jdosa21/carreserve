@@ -1,0 +1,325 @@
+.reserve-main {
+    text-align: center;
+    background-color: white;
+    margin-right: 450px;
+    margin-left: 450px;
+    position: relative;
+    bottom: 20px;
+    box-sizing: border-box;
+    border: 5px solid #288CFF; /* 파란색 */
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.div-carnum {
+    position: relative;
+    right: 25px;
+}
+#stong-rname {
+    position: relative;
+    right: 30px;
+}
+
+#select-rname {
+    background: #dcdcdc;
+    width: 200px;
+    position: relative;
+    left: 65px;
+    appearance:none; /* 화살표 없애기 */
+}
+
+#select-carnum {
+    background: #FEFEFE;
+    width: 200px;
+    position: relative;
+    left: 100px;
+}
+
+.div-purpose{
+    position: relative;
+    right: 25px;
+}
+
+#travel_arriveVia{
+    background: #FEFEFE;
+    width: 200px;
+    position: relative;
+    left: 100px;
+}
+
+.div-dest{
+    position: relative;
+    right: 10px;
+}
+
+.btn-reserve{
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 450px;
+    height: 6vh;
+    font-size: x-large;
+}
+
+#str-start{
+    position: relative;
+    right: 20px;
+}
+
+#id-rt{
+    position: relative;
+    left: 75px;
+    width: 200px;
+}
+
+.class-rt{
+    position: relative;
+    right: 45px;
+}
+
+.btn-reserve:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}
+
+.div-reservelist {
+   display: grid;
+   grid-template-columns: 33% 33% 33%;
+}
+
+.div-reservelist2 {
+   display: grid;
+   grid-template-columns: 90%;
+   position: relative;
+   left: 5%;
+}
+
+[class *= cell] {
+    box-sizing: border-box;
+    border: 5px solid #288CFF;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+}
+
+
+.caption-table{
+    caption-side: top;
+    color: black;
+}
+
+.table-rlist{
+    border: 2px solid #288CFF;
+    border-collapse: 0;
+    font-size: 0.9em;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+
+.table-rlist > thead{
+    border: 2px solid #288CFF;
+}
+
+.table-rlist2{
+    border: 2px solid #288CFF;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+
+.table-rlist2 > th, td{
+    border: 1px solid #288CFF;
+    border-collapse: collapse;
+    height: 3vh;
+}
+
+
+.table-rlist2 > td {
+    width: 75px;
+    height: 60px;
+}
+
+.table-rlist2 > tbody {
+    width: 75px;
+    height: 60px;
+}
+
+.box {
+    text-align: center;
+}
+
+.class-jli {
+    display: inline; /* 줄바꿈 금지 */
+}
+
+#select-condi{
+    background: #FEFEFE;
+    width: 200px;
+    position: relative;
+    left: 85px;
+}
+
+#select-purpose{
+    background: #FEFEFE;
+    width: 200px;
+    appearance:none; /* 화살표 없애기 */
+}
+
+#select-jcarnum{
+    background: #dcdcdc;
+    width: 200px;
+    appearance:none; /* 화살표 없애기 */
+}
+
+#select-jpurpose{
+    background: #dcdcdc;
+    width: 200px;
+    appearance:none; /* 화살표 없애기 */
+}
+
+#select-jdest{
+    background: #dcdcdc;
+    width: 200px;
+    appearance:none; /* 화살표 없애기 */
+}
+
+#select-jrt{
+    background: #dcdcdc;
+    width: 200px;
+    appearance:none; /* 화살표 없애기 */
+}
+
+/* 예약 확인 테이블 */
+.check-main {
+    text-align: center;
+    background-color: white;
+    margin-right: 5%;
+    margin-left: 5%;
+    position: relative;
+    bottom: 20px;
+    box-sizing: border-box;
+    border: 5px solid #288CFF; /* 파란색 */
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.table-check{
+    border: 2px solid #288CFF;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+
+.table-check> th, td{
+    border: 1px solid #288CFF;
+    border-collapse: collapse;
+    height: 3vh;
+}
+
+
+.table-check > td {
+    width: 75px;
+    height: 60px;
+}
+
+.table-check > tbody {
+    width: 75px;
+    height: 60px;
+}
+
+/* 운행일지 테이블 디자인 */
+.table-jlist{
+    border: 2px solid #288CFF;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+
+.table-jlist > th, td{
+    border: 1px solid #288CFF;
+    border-collapse: collapse;
+    height: 3vh;
+}
+
+
+.table-jlist> td {
+    width: 75px;
+    height: 60px;
+}
+
+.table-jlist > tbody {
+    width: 75px;
+    height: 60px;
+}
+
+/* 예약 확인 수정 삭제 버튼 */
+.btn_check{
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 90px;
+}
+
+.btn_check:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}
+
+/* 주소 찾기 디자인 */
+.div_addr{
+    display: inline; /* 줄바꿈 금지 */
+    position: relative;
+}
+
+#member_addr{
+    background: #FEFEFE;
+    width: 145px;
+    position: relative;
+    left: 98px;
+    height: 4vh;
+}
+
+#member_post{
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    text-align: center;
+    width: 50px;
+    height: 4vh;
+    position: relative;
+    left: 98px;
+}
+
